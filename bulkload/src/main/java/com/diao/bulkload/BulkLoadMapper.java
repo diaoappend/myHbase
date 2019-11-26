@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class BulkLoadMapper extends Mapper<LongWritable, Text, ImmutableBytesWritable, Put> {
     private static final byte[] COLUNMFAMILY = Bytes.toBytes("info"); //列族
-    private static final byte[] GCXM = Bytes.toBytes("GCXM"); //字段
+    private static final byte[] GCXM = Bytes.toBytes("GCXM"); //字段，下同
     private static final byte[] XMMC = Bytes.toBytes("XMMC");
     private static final byte[] ID = Bytes.toBytes("ID");
     private static final byte[] XMJC = Bytes.toBytes("XMJC");
@@ -27,7 +27,7 @@ public class BulkLoadMapper extends Mapper<LongWritable, Text, ImmutableBytesWri
             System.out.println("数据有误！");//避免数组下标越界
         }else{
             String key1 = new StringBuffer().append(fields[1]).reverse().toString();
-            rowkey =key1+"|"+fields[4]+"|"+fields[0];
+            rowkey =key1+"|"+fields[4]+"|"+fields[0]; //拼接rowkey，保证唯一性
         }
         ImmutableBytesWritable rowKey = new ImmutableBytesWritable(rowkey.getBytes());
 
