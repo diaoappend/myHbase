@@ -1,4 +1,4 @@
-package com.diao.bulkload;
+package com.diao.bulkload.mapreduce;
 
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;

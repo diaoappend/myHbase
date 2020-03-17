@@ -1,4 +1,4 @@
-package com.diao.bulkload;
+package com.diao.bulkload.mapreduce;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
